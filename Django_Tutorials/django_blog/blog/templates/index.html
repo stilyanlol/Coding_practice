@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+  <h1>This is my blog</h1>
+</div>  
+
+{% for post in posts reversed %}
+<div>
+  <a style="text-decoration: none; color: black;" href="post">
+    <h1>{{post.title}}</h1>
+    <h2>{{post.created_at}}</h2>
+    <p>{{post.body|truncatewords:20}}</p>
+  </a>
+</div>
+{% endfor %}
+
+</body>
+</html>
