@@ -7,3 +7,4 @@ class StudentSerializer(serializers.ModelSerializer):
         fields = (
             'name', 'age'
         )
+
