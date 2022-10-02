@@ -1,26 +1,16 @@
-cards = input()
-shuffle_count = int(input())
+deck_of_cards = input().split()
+number_of_shuffles = int(input())
 
-list_cards = cards.split()
+for shuffle in range(number_of_shuffles):
+    final_deck = []
+    middle_of_the_deck = len(deck_of_cards) // 2
+    left_part = deck_of_cards[0: middle_of_the_deck]
+    right_part = deck_of_cards[middle_of_the_deck::]
 
-odd_list = []
-even_list = []
+    for card_index in range(len(left_part)):
+        final_deck.append(left_part[card_index])
+        final_deck.append(right_part[card_index])
 
-shuffled_list = even_list + odd_list
+    deck_of_cards = final_deck
 
-for i in range(0, len(list_cards)):
-	if i % 2 == 0:
-		even_list.append(list_cards[i])
-	if i % 2 != 0:
-		odd_list.append(list_cards[i])
-
-for shuffle in range(shuffle_count):
-	for j in range(0, len(shuffled_list)):
-		if j % 2 == 0:
-			even_list.append(shuffled_list[j])
-		if j % 2 != 0:
-			odd_list.append(shuffled_list[j])
-
-shuffled_list = even_list + odd_list
-
-print(shuffled_list)
+print(deck_of_cards)
